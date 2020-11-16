@@ -27,7 +27,7 @@ class Service extends GetxController {
     try {
       if (page1Complete.value == false) {
         final response = await http.get(
-            "http://skunkworks.ignitesol.com:8000/books/?bookshelves=$category&search=$searchInput&subjects=$category");
+            "http://skunkworks.ignitesol.com:8000/books/?topic=$category&search=$searchInput");
         if (response.statusCode == 200) {
           final allBooks books = booksFromJson(response.body);
 
